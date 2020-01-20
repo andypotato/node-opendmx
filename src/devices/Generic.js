@@ -21,7 +21,7 @@ class GenericDevice {
     }
 
     // validate value
-    if(isNaN(val) || val < 0 || val > 255) {
+    if(isNaN(value) || value < 0 || value > 255) {
       return false;
     }
 
