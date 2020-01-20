@@ -1,8 +1,14 @@
 # Node.js OpenDMX USB Interface
-This library will let you control [DMX512](https://en.wikipedia.org/wiki/DMX512) devices via the Enttec OpenDMX (or compatible) USB dongle.
+This library lets you control [DMX512](https://en.wikipedia.org/wiki/DMX512) devices via the Enttec OpenDMX (or compatible) USB dongle.
 
 ## Driver installation
 To use this library you need to install the [OpenDMX device driver](https://github.com/lowlander/dmx_usb_module) first. Additional installation instructions can be found [here](https://opendmx.net/index.php/LLA,_OpenDMX_USB_and_Q_Light_Controller_Tutorial) and [here](http://www.erwinrol.com/page/projects/open-dmx-usb/).
+
+## Library installation
+Use NPM to install the library using:
+```
+npm install --save node-opendmx
+```
 
 ## Usage
 
@@ -10,6 +16,7 @@ Create the OpenDMX controller interface:
 ```
 let dmx = new OpenDMX();
 ```
+
 Create a DMX device. In this example a simple RGB light (3 channels) is created. Pull requests for additional devices are welcome!
 ```
 let light = new Devices.LEDRGB();
@@ -19,19 +26,23 @@ Add the device to the collection of devices along with a starting channel. Since
 ```
 dmx.addDevice(light, 1);
 ```
+
 Change the light to red color (just for example)
 ```
 light.red();
 ```
+
 Render the DMX universe
 ```
 dmx.render();
 ```
+
 Your LED light should now switch to red color.
 ```
 light.off();
 dmx.render();
 ```
+
 Your LED light should now be switched off.
 
 ## Common driver related issues

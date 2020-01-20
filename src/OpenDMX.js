@@ -62,6 +62,21 @@ class OpenDMX {
     // write frame to DMX device
     this.stream.write(this.buffer);
   }
+
+  reset() {
+    // resets the universe to its default state
+    this.resetDevices();
+    this.resetBuffer();
+  }
+
+  resetDevices() {
+    this.devices = [];
+  }
+
+  resetBuffer() {
+    this.buffer = Buffer.alloc(513);
+    buffer[0] = 0x00;
+  }
   //----------------------------------------------------------------------------
 
   // helpers

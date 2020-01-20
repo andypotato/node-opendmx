@@ -12,7 +12,28 @@ class GenericDevice {
   }
 
   setChannel(channel, value) {
-    this.buffer[channel] = value;
+
+    // Note: channel values start with "1" (NOT ZERO)
+
+    // validate channel number
+    if(channel > this.buffer.length) {
+      return false;
+    }
+
+    // validate value
+    if(isNaN(val) || val < 0 || val > 255) {
+      return false;
+    }
+
+    this.buffer[channel - 1] = value;
+  }
+
+  setChannels(values) {
+    // expects object with format:
+    // { channel1: value1, channel2: value2 ... }
+    for(let [channel, value] of Object.entries(values)) {
+      this.setChannel(channel, value);
+    }
   }
   //----------------------------------------------------------------------------
 }
