@@ -1,0 +1,27 @@
+{
+  "name": "node-opendmx",
+  "version": "0.0.1",
+  "description": "Node.js interface for Enttec OpenDMX USB (and compatible) dongles",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andypotato/node-opendmx.git"
+  },
+  "keywords": [
+    "DMX",
+    "Enttec",
+    "OpenDMX",
+    "DMX512",
+    "USB",
+    "FTDI",
+    "XLR",
+    "RS485",
+    "Lighting"
+  ],
+  "author": "Andreas Schallwig",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andypotato/node-opendmx/issues"
+  },
+  "homepage": "https://github.com/andypotato/node-opendmx#readme"
+}
