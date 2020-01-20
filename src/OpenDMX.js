@@ -1,12 +1,18 @@
+const fs = require('fs');
+
 class OpenDMX {
 
   // construction
   constructor(streamDevice='/dev/dmx0') {
 
     this.streamDevice = streamDevice;
+    this.stream = fs.createWriteStream(streamDevice);
 
     // init DMX frame buffer
     this.buffer = Buffer.alloc(513);
+
+    // DMX512 specification requests thie first byte to be zero
+    // following 512 bytes are for controlling channels
     this.buffer[0] = 0x00;
 
     // the OpenDMX adapter has no support for universes
@@ -53,7 +59,8 @@ class OpenDMX {
       d.device.buffer.copy(this.buffer, d.startChannel);
     });
 
-    console.log(this.buffer);
+    // write frame to DMX device
+    this.stream.write(this.buffer);
   }
   //----------------------------------------------------------------------------
 

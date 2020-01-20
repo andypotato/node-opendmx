@@ -17,7 +17,7 @@ Make sure you have the necessary build tools installed.
 sudo apt install git bc bison flex libssl-dev make
 ```
 
-### The USB dongle is recognized as `/dev/ttyUSBx` instead of `/dev/dmx0`
+### The USB dongle is recognized as /dev/ttyUSBx instead of /dev/dmx0
 Most likely you did not blacklist the default serial driver. Check the section "Blacklist the other serial drivers" in the [installation tutorial](https://opendmx.net/index.php/LLA,_OpenDMX_USB_and_Q_Light_Controller_Tutorial).
 
 If for some reason blacklisting the serial driver doesn't work you can remove it from your system entirely using these steps:
@@ -36,7 +36,7 @@ alias usb:v0403p6001d[1-9]*dc*dsc*dp*ic*isc*ip*in* dmx_usb
 alias usb:v0403p6001d0[4-9]*dc*dsc*dp*ic*isc*ip*in* dmx_usb
 ```
 
-### The DMX device can only be opened as `root` user
+### The DMX device can only be opened as root user
 You need to create a `udev` rule to automatically change device permissions once you plug in the dongle:
 
 - Find your dongle's vendor and device ID using `lsusb`. You will find both IDs as `ID <vendor ID>:<device ID>` in the output. If for example your output reads: `Bus 001 Device 005: ID 0403:6001 Future Technology Devices International, Ltd FT232 Serial (UART) IC` then `0403` is the vendor ID and `6001` is the device ID.
