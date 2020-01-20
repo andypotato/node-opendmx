@@ -6,7 +6,33 @@ To use this library you need to install the [OpenDMX device driver](https://gith
 
 ## Usage
 
+Create the OpenDMX controller interface:
+```
+let dmx = new OpenDMX();
+```
+Create a DMX device. In this example a simple RGB light (3 channels) is created. Pull requests for additional devices are welcome!
+```
+let light = new Devices.LEDRGB();
+```
 
+Add the device to the collection of devices along with a starting channel. Since the RGB light uses 3 channels, the channels 1-3 in this DMX universe are now occupied.
+```
+dmx.addDevice(light, 1);
+```
+Change the light to red color (just for example)
+```
+light.red();
+```
+Render the DMX universe
+```
+dmx.render();
+```
+Your LED light should now switch to red color.
+```
+light.off();
+dmx.render();
+```
+Your LED light should now be switched off.
 
 ## Common driver related issues
 Instructions below are for Debian / Ubuntu or Raspbian distributions.
