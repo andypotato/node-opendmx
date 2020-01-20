@@ -1,6 +1,6 @@
 {
   "name": "node-opendmx",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Node.js interface for Enttec OpenDMX USB (and compatible) dongles",
   "main": "src/index.js",
   "repository": {
