@@ -75,7 +75,7 @@ class OpenDMX {
 
   resetBuffer() {
     this.buffer = Buffer.alloc(513);
-    buffer[0] = 0x00;
+    this.buffer[0] = 0x00;
   }
   //----------------------------------------------------------------------------
 
